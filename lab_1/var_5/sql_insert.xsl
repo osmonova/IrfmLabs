@@ -39,11 +39,6 @@
                     <xsl:when test="name() = 'id'">
                         <xsl:value-of select=". + 10000"/>
                     </xsl:when>
-                    <xsl:when test="@type = 'dateTime'">
-                        <xsl:text>date'</xsl:text>
-                        <xsl:value-of select="substring-before(., 'T')"/>
-                        <xsl:text>'</xsl:text>
-                    </xsl:when>
                     <xsl:otherwise>
                         <xsl:if test="@type = 'string' or not(@type)"><xsl:text>'</xsl:text></xsl:if>
                         <xsl:call-template name="replace">
